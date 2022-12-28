@@ -1,6 +1,7 @@
 # Loan Qualifier Application
 
-This project provides an automated means to compare the attributes of a desired loan to the loan offerings of a set of banks. Any loan offerings that match the desired loan attributes are displayed, with the option to save the list to a CSV file at a user-specified location.
+This project provides an automated means to compare the attributes of a potential borrower to the loan offerings of a set of banks. The potential borrowers monthly debt to income ratio and the loan to value ratio are displayed along with a notification of how many qualifying loans exist in the provided list of banks.
+The user is then provided the option to save the list to a CSV file at a user-specified location.
 
 ---
 
