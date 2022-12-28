@@ -1,12 +1,18 @@
-# Project Title
+# Loan Qualifier Application
 
-Just after the title, introduce your project by describing attractively what the project is about and what is the main problem that inspires you to create this project or what is the main contribution for the potential user of your project.
+This project provides an automated means to compare the attributes of a desired loan to the loan offerings of a set of banks. Any loan offerings that match the desired loan attributes are displayed, with the option to save the list to a CSV file at a user-specified location.
 
 ---
 
 ## Technologies
 
-Describe the technologies required to use your project such as programming languages, libraries, frameworks, and operating systems. Be sure to include the specific versions of any critical dependencies that you have used in the stable version of your project.
+This software is written in the Python programming language (version 3.9.15). While the software may work in other versions, no guarantees of such are made.
+
+Additional Python libraries necessary for this software include:
+* questionary
+* fire
+
+An environment.yml file is included listing all packages that should be included in the python environment prior to using this software.
 
 ---
 
@@ -24,10 +30,11 @@ This section should include screenshots, code blocks, or animations explaining h
 
 ## Contributors
 
-In this section, list all the people who contribute to this project. You might want recruiters or potential collaborators to reach you, so include your contact email and, optionally, your LinkedIn or Twitter profile.
+Initial code segments provided by FinTech bootcamp.
+Code completion by Thomas L. Champion (thomas@thomaschampion.net)
 
 ---
 
 ## License
 
-When you share a project on a repository, especially a public one, it's important to choose the right license to specify what others can and can't with your source code and files. Use this section to include the license you want to use.
+This software is provided under the MIT license. Please refer to the LICENSE file for further details.

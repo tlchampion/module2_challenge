@@ -1,0 +1,10 @@
+name: dev
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - anaconda
+  - nodejs
+  - fire
+  - questionary
+prefix: /Users/thomas/opt/anaconda3/envs/dev
