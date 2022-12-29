@@ -11,6 +11,7 @@ import fire
 import questionary
 from pathlib import Path
 import csv
+import os
 
 from qualifier.utils.fileio import load_csv
 
@@ -111,6 +112,8 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
 
 def save_qualifying_loans(qualifying_loans):
     """Saves the qualifying loans to a CSV file.
+    user has option to provide specific filepath and name for the file
+    otherwise a default location and filename will be used
 
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
@@ -118,7 +121,36 @@ def save_qualifying_loans(qualifying_loans):
     # @TODO: Complete the usability dialog for savings the CSV Files.
     # YOUR CODE HERE!
 
-    save_csv(qualifying_loans)
+    # if no loans were found there is nothing to save so we exit the application
+    if len(qualifying_loans) == 0:
+        print("No qualifying loans to save, exiting application.")
+        return
+    # if loans were found provide the option to save them to a csv, asking user for the
+    # filepath and filename unless the default location is desired
+
+    # confirm user's desire to save file
+    if questionary.confirm("Would you like to save the list of qualifying loans to a csv file?", default=True).ask():
+        # confirm if user wants to save file in default location
+        if questionary.confirm("Would you like to save the file in the default location? (./qualifying_loans.csv)", default=True).ask():
+            result = save_csv(qualifying_loans)
+        else:
+            # verify desired file location if not the default
+            filepath = questionary.text(
+                "Please enter the filepath, including both directory path and file name, where you would like to save the loan information. Either absolute or relative filepaths may be used.").ask()
+            result = save_csv(qualifying_loans, filepath)
+    # if user chooses not to save the file, print a confirmation that no file was saved
+    else:
+        print(
+            "File not saved. Please rerun application if a new file needs to be generated.")
+
+    # print success message if no errors with saving file
+    if result:
+        print("File successfully saved")
+    # print warning message if there was an error when trying to save the file
+    else:
+        print("Error saving file, please rerun application.")
+
+    print("\n\nThank you for using the application.")
 
 
 def save_csv(qualifying_loans, csvpath='./qualifying_loans.csv'):
@@ -131,11 +163,24 @@ def save_csv(qualifying_loans, csvpath='./qualifying_loans.csv'):
 
     header = ["Lender", "Max Loan Amount", "Max LTV",
               "Max DTI", "Min Credit Score", "Interest Rate"]
-    with open(csvpath, 'w') as csvfile:
-        csvwriter = csv.writer(csvfile)
-        csvwriter.writerow(header)
-        for loan in qualifying_loans:
-            csvwriter.writerow(loan)
+
+    # if directory does not exist, create it
+    os.makedirs(os.path.dirname(csvpath), exist_ok=True)
+    # catch any file writing errors so a user-friendly warning message can be shown
+    # return True if file save has no errors, False if there is an error
+    try:
+        with open(csvpath, 'w') as csvfile:
+            try:
+                csvwriter = csv.writer(csvfile)
+                csvwriter.writerow(header)
+                for loan in qualifying_loans:
+                    csvwriter.writerow(loan)
+            except (IOError, OSError):
+                return False
+    except (FileNotFoundError, PermissionError, OSError):
+        return False
+
+    return True
 
 
 def run():
