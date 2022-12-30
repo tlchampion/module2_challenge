@@ -56,7 +56,9 @@ pip install fire
 
 Prior to using the application you will need to have the following items available:
 1. a csv file with the following information, in the listed order, on potential lenders:
+    ```
         Lender,Max Loan Amount,Max LTV,Max DTI,Min Credit Score,Interest Rate
+    ```
 2. The following information related to the potential borrower
    * credit score
    * current monthly debt
