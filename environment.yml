@@ -3,8 +3,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - anaconda
-  - nodejs
+  - python=3.9.15
   - fire
   - questionary
-prefix: /Users/thomas/opt/anaconda3/envs/dev
+
