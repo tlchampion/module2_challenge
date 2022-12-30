@@ -73,6 +73,29 @@ At each prompt provide the requested information. After the potential lenders, i
 
 Please see below for a sample run showing all prompts and requesting to have the lender information saved to a csv file.
 
+```
+> python app.py
+? Enter a file path to a rate-sheet (.csv): ./data/daily_rate_sheet.csv
+? What's your credit score? 750
+? What's your current amount of monthly debt? 5000
+? What's your total monthly income? 35000
+? What's your desired loan amount? 5000
+? What's your home value? 800000
+The monthly debt to income ratio is 0.14
+The loan to value ratio is 0.01.
+Found 15 qualifying loans
+? Would you like to save the list of qualifying loans to a csv file? Yes
+? Would you like to save the file in the default location? (./qualifying_loans.csv) No
+? Please enter the filepath, including both directory path and file name,
+   where you would like to save the loan information.
+   Either absolute or relative filepaths may be used. ./qualifying_loans.csv
+File successfully saved
+
+
+Thank you for using the application.
+
+```
+
 ---
 
 ## Contributors

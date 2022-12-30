@@ -25,7 +25,7 @@ from qualifier.filters.credit_score import filter_credit_score
 from qualifier.filters.debt_to_income import filter_debt_to_income
 from qualifier.filters.loan_to_value import filter_loan_to_value
 
-# from qualifier.utils.fileio import save_csv
+from qualifier.utils.fileio import save_csv
 
 
 def load_bank_data():
@@ -136,7 +136,7 @@ def save_qualifying_loans(qualifying_loans):
         else:
             # verify desired file location if not the default
             filepath = questionary.text(
-                "Please enter the filepath, including both directory path and file name, where you would like to save the loan information. Either absolute or relative filepaths may be used.").ask()
+                "Please enter the filepath, including both directory path and file name, \n   where you would like to save the loan information. \n   Either absolute or relative filepaths may be used.").ask()
             result = save_csv(qualifying_loans, filepath)
     # if user chooses not to save the file, print a confirmation that no file was saved
     else:
@@ -151,36 +151,6 @@ def save_qualifying_loans(qualifying_loans):
         print("Error saving file, please rerun application.")
 
     print("\n\nThank you for using the application.")
-
-
-def save_csv(qualifying_loans, csvpath='./qualifying_loans.csv'):
-    """
-    saves qualifying loans to a CSV file
-
-    Args:
-    qualifying_loans: the list of qualifying bank loans.
-    """
-
-    header = ["Lender", "Max Loan Amount", "Max LTV",
-              "Max DTI", "Min Credit Score", "Interest Rate"]
-
-    # if directory does not exist, create it
-    os.makedirs(os.path.dirname(csvpath), exist_ok=True)
-    # catch any file writing errors so a user-friendly warning message can be shown
-    # return True if file save has no errors, False if there is an error
-    try:
-        with open(csvpath, 'w') as csvfile:
-            try:
-                csvwriter = csv.writer(csvfile)
-                csvwriter.writerow(header)
-                for loan in qualifying_loans:
-                    csvwriter.writerow(loan)
-            except (IOError, OSError):
-                return False
-    except (FileNotFoundError, PermissionError, OSError):
-        return False
-
-    return True
 
 
 def run():
