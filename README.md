@@ -20,7 +20,7 @@ An environment.yml file is included listing all packages that should be included
 ## Installation Guide
 
 If obtained in a zip archive, the contents must first be unzipped.
-All files can be moved to any desired location on your hard drive, being sure to retain the established directory structure. See below for the required directory structure:
+All files can be moved and/or unzipped to any desired location on your hard drive, being sure to retain the established directory structure. See below for the required directory structure:
 ```
 |-- app.py
 |

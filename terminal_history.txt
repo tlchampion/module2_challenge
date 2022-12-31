@@ -1,50 +1,81 @@
-  999  jupyter lab
- 1000  exit
- 1001  ls -la
- 1002  git pull origin main
- 1003  ls
- 1004  cd ..
- 1005  ls
- 1006  cd ..
- 1007  ls
- 1008  cd ModuleActivities
- 1009  ls
- 1010  cd Module03
- 1011  ls
- 1012  conda activate dev
- 1013  jupyter lab
- 1014  pwd
- 1015  ls
- 1016  cd ..
- 1017  ls
- 1018  cd ..
- 1019  ls
- 1020  cd ModuleChallenges
- 1021  ls
- 1022  cd module2_challenge
- 1023  ls
- 1024  code .
- 1025  ls
- 1026  gh repo clone tlchampion/module2_challenge
- 1027  ls
- 1028  cd module2_challenge
- 1029  ls =la
- 1030  la -la
- 1031  ls -la
- 1032  git status
- 1033  nano .gitignore
- 1034  git status
- 1035  git add .
- 1036  git commit -m "initial commit"
- 1037  git push origin main
- 1038  conda env export --from-history > environment.yml
- 1039  ls
- 1040  git add .
- 1041  git status
- 1042  git commit -m "initial updates to README file with project and environment details"
- 1043  git push origin main
- 1044  history
- 1045  git add .
- 1046  git commit -m "updated README, added function to save loan information to a csv file"
- 1047  git push main origin
- 1048  git push origin main
+913  gh repo clone tlchampion/module2_challenge
+914  ls
+915  cd module2_challenge
+916  ls =la
+917  la -la
+918  ls -la
+919  git status
+920  nano .gitignore
+921  git status
+922  git add .
+923  git commit -m "initial commit"
+924  git push origin main
+925  conda env export --from-history > environment.yml
+926  ls
+927  git add .
+928  git status
+929  git commit -m "initial updates to README file with project and environment details"
+930  git push origin main
+931  history
+932  git add .
+933  git commit -m "updated README, added function to save loan information to a csv file"
+934  git push main origin
+935  git push origin main
+936  history 50 > terminal_history.txt
+937  deactivate
+938  conda deactivate
+939  exit
+940  conda activate dev
+941  python app.py
+942  python app.py
+943  git add .
+944  git status
+945  git commit -m "added terminal_history file. added default file save location to save_csv function"
+946  git push origin main
+947  python app.py
+948  python app.py
+949  python app.py
+950  python app.py
+951  python app.py
+952  python app.py
+953  python app.py
+954  python app.py
+955  python app.py
+956  python app.py
+957  python app.py
+958  python app.py
+959  git add .
+960  git commit -m "Added code to allow user to save file to desired location and for error handling in writing the file"
+961  git push origin main
+962  git add .
+963  git status
+964  git commit -m "removed test files"
+965  git push origin main
+966  history
+967  history 900
+968  ls
+969  ls -la
+970  code .
+971  git status
+972  exit
+973  conda activate dev
+974  git add .
+975  git commit -m "README.md editing"
+976  git push origin main
+977  git add .
+978  git commit -m "updated README.md; moved save_csv function into fileio.py and added import statement to app.py"
+979  git push origin main
+980  git add .
+981  git commit -m "updated formatting on README.md"
+982  git push origin main
+983  git add .
+984  git commit -m "updated .gitignore file"
+985  git push origin main
+986  code .
+987  conda activate dev
+988  python app.py
+989  python app.py
+990  python app.py
+991  python app.py
+992  python app.py
+993  python app.py
